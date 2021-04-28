@@ -7,7 +7,7 @@
     <meta name="description" content=""/>
     <meta name="author" content=""/>
 
-    <title>Starter Template for Bootstrap</title>
+    <title>Fairplay Player</title>
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css"/>
@@ -49,7 +49,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">Project name</a>
+            <a class="navbar-brand" href="#">Fairplay Player</a>
         </div>
         <div class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
@@ -67,12 +67,18 @@
 <div class="container">
     <div class="row">
         <div class="starter-template">
-            <h1>Fairplay Stream Player on Safari (Mac OS)</h1>
+            <h1>Fairplay Player</h1>
+            <h4>(Mac OS Safari)</h4>
 
             <div class="col-10 col-offset-1">
                 <div class="video-area">
-                    <video id="video_player" src="https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8" controls preload="auto" autoplay="true"></video>
+                    <video id="video_player" controls preload="auto" autoplay="true"></video>
                 </div>
+            </div>
+
+            <div>
+                <h4>Supported Schemes</h4>
+                <p id="log_area"></p>
             </div>
 
         </div>
@@ -82,6 +88,8 @@
 <!-- /.container -->
 <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+<script src="js/sintel.js"></script>
+<script src="js/bbb.js"></script>
 <script src="js/script.js"></script>
 </body>
 </html>

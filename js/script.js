@@ -1,120 +1,155 @@
-// var mediaElement = $('#video_player');
-// playerElement.src = "https://devstreaming-cdn.apple.com/videos/streaming/examples/img_bipbop_adv_example_ts/master.m3u8";
-// playerElement.autoplay = true;
-
-// var playerOption = new PlayerOption();
-// playerOption.masterManifestUrl = 'test.ts';
-// var player = new vplayer("video_player", playerOption);
-
-// player.load();
-
-var baseUrl = "https://test-streams.mux.dev/x36xhzz/";
-var mediabbb = {
-    segements: [
-        "url_526/193039199_mp4_h264_aac_ld_7.ts",
-        "url_527/193039199_mp4_h264_aac_ld_7.ts",
-        "url_528/193039199_mp4_h264_aac_ld_7.ts",
-        "url_529/193039199_mp4_h264_aac_ld_7.ts",
-        "url_530/193039199_mp4_h264_aac_ld_7.ts",
-        "url_531/193039199_mp4_h264_aac_ld_7.ts",
-        "url_532/193039199_mp4_h264_aac_ld_7.ts",
-        "url_533/193039199_mp4_h264_aac_ld_7.ts",
-        "url_534/193039199_mp4_h264_aac_ld_7.ts",
-        "url_535/193039199_mp4_h264_aac_ld_7.ts",
-        "url_536/193039199_mp4_h264_aac_ld_7.ts",
-        "url_537/193039199_mp4_h264_aac_ld_7.ts",
-        "url_538/193039199_mp4_h264_aac_ld_7.ts",
-        "url_539/193039199_mp4_h264_aac_ld_7.ts",
-        "url_540/193039199_mp4_h264_aac_ld_7.ts",
-        "url_541/193039199_mp4_h264_aac_ld_7.ts",
-        "url_542/193039199_mp4_h264_aac_ld_7.ts",
-        "url_543/193039199_mp4_h264_aac_ld_7.ts",
-        "url_544/193039199_mp4_h264_aac_ld_7.ts",
-        "url_545/193039199_mp4_h264_aac_ld_7.ts",
-        "url_546/193039199_mp4_h264_aac_ld_7.ts",
-        "url_547/193039199_mp4_h264_aac_ld_7.ts",
-        "url_548/193039199_mp4_h264_aac_ld_7.ts",
-        "url_549/193039199_mp4_h264_aac_ld_7.ts",
-        "url_550/193039199_mp4_h264_aac_ld_7.ts",
-        "url_551/193039199_mp4_h264_aac_ld_7.ts",
-        "url_552/193039199_mp4_h264_aac_ld_7.ts",
-        "url_553/193039199_mp4_h264_aac_ld_7.ts",
-        "url_554/193039199_mp4_h264_aac_ld_7.ts",
-        "url_555/193039199_mp4_h264_aac_ld_7.ts",
-        "url_556/193039199_mp4_h264_aac_ld_7.ts",
-        "url_557/193039199_mp4_h264_aac_ld_7.ts",
-        "url_558/193039199_mp4_h264_aac_ld_7.ts",
-        "url_559/193039199_mp4_h264_aac_ld_7.ts",
-        "url_560/193039199_mp4_h264_aac_ld_7.ts",
-        "url_561/193039199_mp4_h264_aac_ld_7.ts",
-        "url_562/193039199_mp4_h264_aac_ld_7.ts",
-        "url_563/193039199_mp4_h264_aac_ld_7.ts",
-        "url_564/193039199_mp4_h264_aac_ld_7.ts",
-        "url_565/193039199_mp4_h264_aac_ld_7.ts",
-        "url_566/193039199_mp4_h264_aac_ld_7.ts",
-        "url_567/193039199_mp4_h264_aac_ld_7.ts",
-        "url_568/193039199_mp4_h264_aac_ld_7.ts",
-        "url_569/193039199_mp4_h264_aac_ld_7.ts",
-        "url_570/193039199_mp4_h264_aac_ld_7.ts",
-        "url_571/193039199_mp4_h264_aac_ld_7.ts",
-        "url_572/193039199_mp4_h264_aac_ld_7.ts",
-        "url_573/193039199_mp4_h264_aac_ld_7.ts",
-        "url_574/193039199_mp4_h264_aac_ld_7.ts",
-        "url_575/193039199_mp4_h264_aac_ld_7.ts",
-        "url_576/193039199_mp4_h264_aac_ld_7.ts",
-        "url_577/193039199_mp4_h264_aac_ld_7.ts",
-        "url_578/193039199_mp4_h264_aac_ld_7.ts",
-        "url_579/193039199_mp4_h264_aac_ld_7.ts",
-        "url_580/193039199_mp4_h264_aac_ld_7.ts",
-        "url_581/193039199_mp4_h264_aac_ld_7.ts",
-        "url_582/193039199_mp4_h264_aac_ld_7.ts",
-        "url_583/193039199_mp4_h264_aac_ld_7.ts",
-        "url_584/193039199_mp4_h264_aac_ld_7.ts",
-        "url_585/193039199_mp4_h264_aac_ld_7.ts",
-        "url_586/193039199_mp4_h264_aac_ld_7.ts",
-        "url_587/193039199_mp4_h264_aac_ld_7.ts",
-        "url_588/193039199_mp4_h264_aac_ld_7.ts",
-        "url_589/193039199_mp4_h264_aac_ld_7.ts"
-    ]
+var keySystems = {
+    widevine: ['com.widevine.alpha'],
+    playready: ['com.microsoft.playready', 'com.youtube.playready'],
+    clearkey: ['webkit-org.w3.clearkey', 'org.w3.clearkey'],
+    primetime: ['com.adobe.primetime', 'com.adobe.access'],
+    fairplay: ['com.apple.fps', 'com.apple.fps.1_0', 'com.apple.fps.2_0', 'com.apple.fps.3_0']
 };
 
-var videoMimeType = 'video/mp4; codecs="avc1.42E01E, mp4a.40.2"';
-var audioMimeType = 'audio/mp4; codecs="mp4a.40.2"';
+var config = [{
+    "initDataTypes": ["cenc"],
+    "audioCapabilities": [{
+         "contentType": "audio/mp4;codecs=\"mp4a.40.2\""
+    }],
+    "videoCapabilities": [{
+         "contentType": "video/mp4;codecs=\"avc1.42E01E\""
+    }]
+}];
 
 var video = document.getElementById('video_player');
-var mediaSource = new MediaSource();
 
-function sourceOpen(e) {
-    console.log(e.target);
-    var mediaSource = e.target;
-    if (mediaSource.readyState == "closed") {
-        return;
+function supportsEncryptedMediaExtension() {
+
+    var supportedSchemes = "";
+
+    /**
+     * default eme
+     */
+    if (typeof navigator.requestMediaKeySystemAccess === 'function') {
+        console.log("found default EME supported");
     }
-    var sourceBuffer = mediaSource.addSourceBuffer(videoMimeType);
 
-    var mediaUrl = "https://bitdash-a.akamaihd.net/content/sintel/hls/video/250kbit/seq-0.ts";
-    fetchBuffer(mediaUrl, function(buffer) {
-        sourceBuffer.appendBuffer(new Uint8Array(buffer));
+    /**
+     * microsoft eme
+     */
+    if (typeof window.MSMediaKeys === 'function') {
+        console.log('found MS-EME');
+    }
+
+    /**
+     * webkit eme
+     */
+    if (typeof video.webkitGenerateKeyRequest === 'function') {
+        console.log('found WebKit EME');
+    }
+
+    /**
+     * fairplay support checking
+     */
+    keySystems.fairplay.forEach( keySystem => {
+        if (navigator.requestMediaKeySystemAccess) {
+            navigator.requestMediaKeySystemAccess(keySystem, config).then(function(keySystemAccess){
+                console.log(keySystem + " is supported.");
+                supportedSchemes = supportedSchemes + keySystem + " ";
+                document.getElementById('log_area').innerText = "[" + supportedSchemes + "]";
+                console.log(keySystemAccess);
+            }).catch(function(){
+                console.log(keySystem + " is NOT supported.");
+            });
+        }
     });
-    sourceBuffer.addEventListener('updateend', updateEnd);
 }
 
-function updateEnd(e) {
-    var sourceBuffer = e.target;
-    console.log(sourceBuffer);
-    mediaSource.endOfStream();
-    video.play();
+function setupEME() {
+    video.session = [];
+    video.addEventListener('encrypted', function(encryptedEvent){
+        console.log(encryptedEvent);
+    });
 }
 
-function fetchBuffer(url, callback) {
-    var xhr = new XMLHttpRequest;
-    xhr.open('get', url);
-    xhr.responseType = 'arraybuffer';
-    xhr.onload = function () {
-        callback(xhr.response);
-    };
-    xhr.send();
+/**
+ * mse load buffer
+ * @param {*} mediaSource 
+ * @param {*} type 
+ * @param {*} mediaSegementQueue 
+ * @returns 
+ */
+function MSELoadBuffer(mediaSource, type, baseUrl, mediaSegementQueue) {
+    return new Promise(function(resolve, reject){
+        var sourceBuffer;
+        var segementIndex = 0;
+
+        function loadNext() {
+            if (mediaSource.readyState == 'close') {
+                reject(new Error('MediaSource state is closed'));
+                return;
+            }
+
+            /**
+             * segement's length always decided by audio's segements. 
+             */
+            if (segementIndex >= mediaSegementQueue.length) {
+                resolve();
+                return;
+            }
+
+            var sigment = baseUrl + mediaSegementQueue[segementIndex++];
+
+            fetchBuffer(sigment)
+            .then(function(buffer){
+                sourceBuffer.appendBuffer(new Uint8Array(buffer));
+            }).catch(function(Error){
+                console.log(Error);
+            });
+        }
+
+        function fetchBuffer(url) {
+            return new Promise(function(resolve, reject){
+                var xhr = new XMLHttpRequest;
+                xhr.open('get', url);
+                xhr.responseType = 'arraybuffer';
+                xhr.onload = function () {
+                    resolve(xhr.response);
+                };
+                xhr.onerror = function () {
+                    reject(new Error('request failed'));
+                }
+                xhr.send();
+            });
+        }
+
+        sourceBuffer = mediaSource.addSourceBuffer(type);
+        sourceBuffer.addEventListener("updateend", loadNext);
+        loadNext();
+    });
 }
 
-video.src = URL.createObjectURL(mediaSource);
-mediaSource.addEventListener('sourceopen', sourceOpen);
+/**
+ * playback start function
+ */
+function startPlaying(media) {
+    var videoMimeType = 'video/mp4; codecs="avc1.42E01E, mp4a.40.2"';
+    var audioMimeType = 'audio/mp4; codecs="mp4a.40.2"';
+
+    setupEME();
+    var mediaSource = new MediaSource();
+
+    video.src = URL.createObjectURL(mediaSource);
+
+    var sourceOpen = function(e) {
+        mediaSource.removeEventListener('sourceopen', sourceOpen);
+        Promise.all([MSELoadBuffer(mediaSource, videoMimeType, media.baseUrl, media.video_segements)])
+            .then(function() {
+                mediaSource.endOfStream();
+            });
+    }
+
+    mediaSource.addEventListener('sourceopen', sourceOpen);
+    video.addEventListener('canplay', function(){
+        video.play();
+    });
+}
+
+supportsEncryptedMediaExtension();
+startPlaying(bbb);
+
